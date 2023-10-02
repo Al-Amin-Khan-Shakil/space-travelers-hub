@@ -1,11 +1,16 @@
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/Navbar';
+import Rockets from './components/Rockets';
 
 function App() {
   return (
-    <div className="App">
+    <>
       <Navbar />
-    </div>
+      <Routes>
+        <Route path="/" element={<Rockets />} />
+      </Routes>
+    </>
   );
 }
 
