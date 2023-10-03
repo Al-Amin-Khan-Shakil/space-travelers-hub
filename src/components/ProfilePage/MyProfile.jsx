@@ -1,10 +1,10 @@
-import React from 'react'
-import '../ProfilePage/MyProfile.css'
+import React from 'react';
+import './MyProfile.css';
 
 function MyProfile() {
-    return (
-        <h1>This is my profile</h1>
-    )
+  return (
+    <h1>This is my profile</h1>
+  );
 }
 
-export default MyProfile
+export default MyProfile;

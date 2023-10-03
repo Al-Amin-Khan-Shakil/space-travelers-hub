@@ -1,11 +1,11 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   value: 0,
 };
 
 export const missionsSlice = createSlice({
-  name: "mission",
+  name: 'mission',
   initialState,
   reducers: {
     increment: (state) => {
@@ -20,7 +20,6 @@ export const missionsSlice = createSlice({
   },
 });
 
-export const { increment, decrement, incrementByAmount } =
-  missionsSlice.actions;
+export const { increment, decrement, incrementByAmount } = missionsSlice.actions;
 
 export default missionsSlice.reducer;
