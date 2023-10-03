@@ -8,7 +8,7 @@ const Spacecraft = () => {
 
   useEffect(() => {
     dispatch(getRocket());
-  }, []);
+  }, [dispatch]);
 
   return (
     <ul className="rocket-list">
