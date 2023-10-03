@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { getRocket } from '../redux/rockets/rocketSlice';
+import { getRocket, reserveRocket, cancelRocket } from '../redux/rockets/rocketSlice';
 
 const Spacecraft = () => {
   const dispatch = useDispatch();
@@ -8,7 +8,7 @@ const Spacecraft = () => {
 
   useEffect(() => {
     dispatch(getRocket());
-  }, []);
+  }, [dispatch]);
 
   return (
     <ul className="rocket-list">
@@ -18,8 +18,16 @@ const Spacecraft = () => {
             <img src={rocket.flickr_images} alt="" />
             <h2 className="rocket-title">{rocket.name}</h2>
             <p className="rocket-des">{rocket.description}</p>
-            {rocket.reserved && <button type="button" className="reserve-rocket">Reserve Rocket</button>}
-            {!rocket.reserved && <button type="button" className="cancel-reserve">Cancel Reservation</button>}
+            {rocket.reserved && (
+            <button type="button" className="reserve-rocket" onClick={() => dispatch(reserveRocket(rocket.id))}>
+              Reserve Rocket
+            </button>
+            )}
+            {!rocket.reserved && (
+            <button type="button" className="cancel-reserve" onClick={() => dispatch(cancelRocket(rocket.id))}>
+              Cancel Reservation
+            </button>
+            )}
           </li>
         ))
       }
