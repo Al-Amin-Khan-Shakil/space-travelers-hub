@@ -15,10 +15,11 @@ const Spacecraft = () => {
       {
         rockets.map((rocket) => (
           <li className="rocket-item" key={rocket.id}>
-            <img src={rocket.flickr_images[0]} alt="" />
+            <img src={rocket.flickr_images} alt="" />
             <h2 className="rocket-title">{rocket.name}</h2>
             <p className="rocket-des">{rocket.description}</p>
-            <button type="button" className="reserve-btn">Reserve Rocket</button>
+            {rocket.reserved && <button type="button" className="reserve-rocket">Reserve Rocket</button>}
+            {!rocket.reserved && <button type="button" className="cancel-reserve">Cancel Reservation</button>}
           </li>
         ))
       }
