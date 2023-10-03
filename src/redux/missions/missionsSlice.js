@@ -21,7 +21,11 @@ const missionsSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(fetchMissionsAsync.fulfilled, (state, action) => {
-      state.missionData = action.payload;
+      state.missionData = action.payload.map((mission) => ({
+        mission_id: mission.mission_id,
+        mission_name: mission.mission_name,
+        description: mission.description,
+      }));
     });
   },
 });
