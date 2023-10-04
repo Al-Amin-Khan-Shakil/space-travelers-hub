@@ -4,10 +4,10 @@ import './Navbar.css';
 const Navbar = () => (
   <nav className="navbar">
     <div className="logo-container">
-      <a href="/">
+      <div>
         <img src="../planet.png" alt="logo" className="logo-img" />
         Space Travelers&apos; Hub
-      </a>
+      </div>
       <ul className="nav-menu">
         <li className="nav-list">
           <NavLink className="nav-link" to="/">Rockets</NavLink>

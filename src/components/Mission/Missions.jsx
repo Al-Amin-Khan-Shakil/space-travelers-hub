@@ -1,76 +1,63 @@
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { useTable } from 'react-table';
-import { fetchMissionsAsync } from '../../redux/missions/missionsSlice';
-import './Missions.css';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchMissionsAsync, cancelMission, joinMission } from '../../redux/missions/missionsSlice';
 
 function Missions() {
+  const missions = useSelector((state) => state.missions.missionData);
   const dispatch = useDispatch();
-  const missionData = useSelector((state) => state.missions.missionData);
 
   useEffect(() => {
-    if (missionData.length === 0) {
+    if (!missions.length) {
       dispatch(fetchMissionsAsync());
     }
-  }, [dispatch, missionData]);
-
-  const columns = React.useMemo(
-    () => [
-      {
-        Header: 'Mission ID',
-        accessor: 'mission_id',
-      },
-      {
-        Header: 'Mission Name',
-        accessor: 'mission_name',
-      },
-      {
-        Header: 'Description',
-        accessor: 'description',
-      },
-    ],
-    [],
-  );
-
-  const {
-    headerGroups,
-    rows,
-    prepareRow,
-  } = useTable({
-    columns,
-    data: missionData,
-  });
+  }, [dispatch]);
 
   return (
     <div>
-      <h1>Missions</h1>
-      {missionData.length === 0 ? (
-        <p>Loading...</p>
-      ) : (
-        <table className="table">
-          <thead>
-            {headerGroups.map((headerGroup) => (
-              <tr key={headerGroup.id}>
-                {headerGroup.headers.map((column) => (
-                  <th key={column.id}>{column.render('Header')}</th>
-                ))}
-              </tr>
-            ))}
+      <div className="mission-page">
+        <table className="missionTable">
+          <thead className="missionThead">
+            <th width="10%">
+              <h3>Mision</h3>
+            </th>
+
+            <th width="65%">
+              <h3>Description</h3>
+            </th>
+
+            <th width="12.5%">
+              <h3>Status</h3>
+            </th>
+            <th width="12.5%">
+              {' '}
+            </th>
           </thead>
+
           <tbody>
-            {rows.map((row) => {
-              prepareRow(row);
-              return (
-                <tr key={row.id}>
-                  {row.cells.map((cell) => (
-                    <td key={`i${row.id}`}>{cell.render('Cell')}</td>
-                  ))}
-                </tr>
-              );
-            })}
+            {
+
+            missions.map((mission) => (
+              <tr key={mission.mission_id}>
+                <td className="mission-name"><h3>{mission.mission_name}</h3></td>
+                <td><p className="description">{mission.description}</p></td>
+                <td>
+                  <div>
+                    {mission.reserved ? <p className="active-member"> Active member</p> : <p className="not-member">NOT a member</p>}
+                  </div>
+                </td>
+                <td className="mission-btn">
+                  {!mission.reserved
+                    ? <button type="button" className="join-mission" onClick={() => dispatch(joinMission(mission.mission_id))}>Join Mission</button>
+                    : <button type="button" className="leave-mission" onClick={() => dispatch(cancelMission(mission.mission_id))}>Leave Mission</button>}
+                </td>
+              </tr>
+            ))
+
+          }
+
           </tbody>
         </table>
-      )}
+      </div>
     </div>
   );
 }
