@@ -7,7 +7,9 @@ const Spacecraft = () => {
   const rockets = useSelector((state) => state.rockets.rockets);
 
   useEffect(() => {
-    dispatch(getRocket());
+    if (!rockets.length) {
+      dispatch(getRocket());
+    }
   }, [dispatch]);
 
   return (

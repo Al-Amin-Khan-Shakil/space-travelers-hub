@@ -1,9 +1,21 @@
-import React from 'react';
+import { useSelector } from 'react-redux';
 import './MyProfile.css';
 
 function MyProfile() {
+  const rockets = useSelector((state) => state.rockets.rockets);
+  const myRockets = rockets.filter((rocket) => rocket.reserved !== true);
+
   return (
-    <h1>This is my profile</h1>
+    <div className="list-container">
+      <ul className="my-rocket">
+        <h2 className="list-title">My Rockets</h2>
+        {myRockets.map((rocket) => (
+          <li className="rocket-list" key={rocket.id}>
+            {rocket.name}
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 
