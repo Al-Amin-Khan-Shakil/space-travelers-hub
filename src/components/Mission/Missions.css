@@ -68,8 +68,10 @@ tbody tr td {
 
 .mission-btn button {
   padding: 5px 10px;
-  color: black;
-  border: 1px solid black;
+  color: #fff;
+  background-color: #007bff;
+  border: .1px solid #007bff;
+  border-radius: 3px;
   cursor: pointer;
 }
 
