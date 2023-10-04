@@ -23,7 +23,7 @@ const Spacecraft = () => {
             <div className="content-container">
               <h2 className="rocket-title">{rocket.name}</h2>
               <p className="rocket-des">
-                {rocket.reserved && <span className="reserved-tag" style={{ color: 'red' }}>Reserved</span>}
+                {rocket.reserved && <span className="reserved-tag">Reserved</span>}
                 {rocket.description}
               </p>
               {!rocket.reserved && (
