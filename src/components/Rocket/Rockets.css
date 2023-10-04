@@ -1,9 +1,53 @@
 .rockets {
-  padding: 4vh 4vw;
+  width: 100vw;
+  padding: 2vh 5vw;
+  display: flex;
+  flex-direction: column;
 }
 
 .rocket-item {
   display: flex;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
+  column-gap: 2%;
+  width: 100%;
+  height: auto;
+  margin: 4vh 0;
+}
+
+.img-container {
+  width: 25%;
+  height: auto;
+}
+
+.rocket-img {
+  max-width: 100%;
+}
+
+.content-container {
+  width: 73%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  row-gap: 20px;
+}
+
+.reserve-rocket {
+  padding: 12px;
+  background: #007bff;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.cancel-reserve {
+  padding: 12px;
+  background: #fff;
+  border: 1.5px solid #c1c1c1;
+  border-radius: 5px;
+  color: #b1b1b1;
+  font-size: 1rem;
 }

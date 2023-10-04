@@ -18,7 +18,7 @@ const Spacecraft = () => {
         rockets.map((rocket) => (
           <li className="rocket-item" key={rocket.id}>
             <div className="img-container">
-              <img src={rocket.flickr_images} alt="" />
+              <img src={rocket.flickr_images} alt="" className="rocket-img" />
             </div>
             <div className="content-container">
               <h2 className="rocket-title">{rocket.name}</h2>

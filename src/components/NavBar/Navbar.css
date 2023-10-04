@@ -1,7 +1,7 @@
 .navbar {
   width: 100vw;
-  height: 82px;
-  padding: 0 2vw;
+  height: 110px;
+  padding: 0 3vw;
 }
 
 .logo-container {
@@ -11,7 +11,7 @@
   height: 100%;
   width: 100%;
   padding: 0 2vw;
-  border-bottom: 2px solid #dbdbdc;
+  border-bottom: 1.5px solid #dbdbdc;
 }
 
 .brand-container {
@@ -28,7 +28,7 @@
 
 .logo-title {
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
 }
 
 .nav-menu {
