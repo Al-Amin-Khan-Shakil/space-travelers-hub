@@ -2,3 +2,43 @@
   margin: 0;
   padding: 0;
 }
+
+.list-container {
+  background-color: #ddd;
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+}
+
+.rocket-table,
+.mission-table {
+  width: 30%;
+  border-collapse: separate;
+  border: 1px solid #000;
+}
+
+.table-title {
+  background-color: #4d4d4d;
+  color: #fff;
+}
+
+.table-title th {
+  padding: 10px;
+  text-align: start;
+}
+
+.table-body {
+  background-color: #f2f2f2;
+}
+
+.table-body tr td {
+  border-bottom: 1px solid #ddd;
+  text-align: start;
+  padding: 13px;
+}
+
+.my-rockets,
+.my-mission {
+  margin: 0;
+  font-size: 24px;
+}

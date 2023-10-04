@@ -10,7 +10,7 @@ function Missions() {
     if (!missions.length) {
       dispatch(fetchMissionsAsync());
     }
-  }, [dispatch]);
+  }, [dispatch, missions.length]);
 
   return (
     <div>
