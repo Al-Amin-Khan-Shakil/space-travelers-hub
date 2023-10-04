@@ -1,0 +1,9 @@
+.rockets {
+  padding: 4vh 4vw;
+}
+
+.rocket-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}

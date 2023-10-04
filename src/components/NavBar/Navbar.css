@@ -2,7 +2,6 @@
   width: 100vw;
   height: 82px;
   padding: 0 2vw;
-  box-shadow: #21252966 0 1px 4px;
 }
 
 .logo-container {
@@ -11,6 +10,8 @@
   align-items: center;
   height: 100%;
   width: 100%;
+  padding: 0 2vw;
+  border-bottom: 2px solid #dbdbdc;
 }
 
 .brand-container {
