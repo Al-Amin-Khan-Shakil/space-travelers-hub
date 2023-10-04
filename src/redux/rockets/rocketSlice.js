@@ -55,7 +55,6 @@ const rocketSlice = createSlice({
           reserved: false,
         }));
         state.loading = false;
-        // console.log(state.rockets);
       })
       .addCase(getRocket.rejected, (state, action) => {
         state.loading = false;

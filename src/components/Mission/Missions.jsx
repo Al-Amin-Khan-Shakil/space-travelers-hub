@@ -42,11 +42,11 @@ function Missions() {
                 <td><p className="description">{mission.description}</p></td>
                 <td>
                   <div>
-                    {!mission.reserved ? <p className="active-member"> Active member</p> : <p className="not-member">NOT a member</p>}
+                    {mission.reserved ? <p className="active-member"> Active member</p> : <p className="not-member">NOT a member</p>}
                   </div>
                 </td>
                 <td className="mission-btn">
-                  {mission.reserved
+                  {!mission.reserved
                     ? <button type="button" className="join-mission" onClick={() => dispatch(joinMission(mission.mission_id))}>Join Mission</button>
                     : <button type="button" className="leave-mission" onClick={() => dispatch(cancelMission(mission.mission_id))}>Leave Mission</button>}
                 </td>
