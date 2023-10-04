@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchMissionsAsync } from '../../redux/missions/missionsSlice';
+import { fetchMissionsAsync, cancelMission, joinMission } from '../../redux/missions/missionsSlice';
 
 function Missions() {
   const missions = useSelector((state) => state.missions.missionData);
@@ -10,7 +10,7 @@ function Missions() {
     if (!missions.length) {
       dispatch(fetchMissionsAsync());
     }
-  }, []);
+  }, [dispatch]);
 
   return (
     <div>
@@ -42,11 +42,13 @@ function Missions() {
                 <td><p className="description">{mission.description}</p></td>
                 <td>
                   <div>
-                    active member
+                    {!mission.reserved ? <p className="active-member"> Active member</p> : <p className="not-member">NOT a member</p>}
                   </div>
                 </td>
                 <td className="mission-btn">
-                  <button type="button" className="leave-mission">Leave Mission</button>
+                  {mission.reserved
+                    ? <button type="button" className="join-mission" onClick={() => dispatch(joinMission(mission.mission_id))}>Join Mission</button>
+                    : <button type="button" className="leave-mission" onClick={() => dispatch(cancelMission(mission.mission_id))}>Leave Mission</button>}
                 </td>
               </tr>
             ))
