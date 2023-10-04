@@ -1,3 +1,4 @@
+import './Rockets.css';
 import Spacecraft from './Spacecraft';
 
 const Rockets = () => (

@@ -1,8 +1,54 @@
-* {
-  margin: 0;
-  padding: 0;
+.navbar {
+  width: 100vw;
+  height: 110px;
+  padding: 0 3vw;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding: 0 2vw;
+  border-bottom: 1.5px solid #dbdbdc;
+}
+
+.brand-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 12px;
+}
+
+.logo-img {
+  width: 60px;
+  height: 60px;
+}
+
+.logo-title {
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.nav-list {
+  list-style-type: none;
+  padding: 0 25px;
+}
+
+.nav-list:last-child {
+  border-left: 2px solid #212529;
+}
+
+.nav-link {
+  color: #007bff;
   text-decoration: none;
-  box-sizing: border-box;
 }
 
 .active {
