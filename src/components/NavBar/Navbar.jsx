@@ -4,7 +4,7 @@ import './Navbar.css';
 const Navbar = () => (
   <nav className="navbar">
     <div className="logo-container">
-      <div>
+      <div className="brand-container">
         <img src="../planet.png" alt="logo" className="logo-img" />
         <div className="logo-title">Space Travelers&apos; Hub</div>
       </div>
