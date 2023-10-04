@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchMissionsAsync, cancelMission, joinMission } from '../../redux/missions/missionsSlice';
+import './Missions.css';
 
 function Missions() {
   const missions = useSelector((state) => state.missions.missionData);
@@ -18,7 +19,7 @@ function Missions() {
         <table className="missionTable">
           <thead className="missionThead">
             <th width="10%">
-              <h3>Mision</h3>
+              <h3>Missions</h3>
             </th>
 
             <th width="65%">
