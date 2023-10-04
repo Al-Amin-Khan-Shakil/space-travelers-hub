@@ -1,13 +1,15 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
 }
 
 .list-container {
-  background-color: #ddd;
   display: flex;
   justify-content: space-around;
   align-items: baseline;
+  margin: 50px;
 }
 
 .rocket-table,
@@ -27,10 +29,6 @@
   text-align: start;
 }
 
-.table-body {
-  background-color: #f2f2f2;
-}
-
 .table-body tr td {
   border-bottom: 1px solid #ddd;
   text-align: start;
@@ -39,6 +37,5 @@
 
 .my-rockets,
 .my-mission {
-  margin: 0;
   font-size: 24px;
 }
