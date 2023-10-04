@@ -10,9 +10,7 @@ const Spacecraft = () => {
     if (!rockets.length) {
       dispatch(getRocket());
     }
-  }, [dispatch]);
-
-  console.log('rockets ', rockets)
+  }, [dispatch, rockets.length]);
 
   return (
     <ul className="rocket-list">
