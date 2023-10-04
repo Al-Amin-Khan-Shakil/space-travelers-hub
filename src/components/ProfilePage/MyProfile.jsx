@@ -3,7 +3,7 @@ import './MyProfile.css';
 
 function MyProfile() {
   const rockets = useSelector((state) => state.rockets.rockets);
-  const myRockets = rockets.filter((rocket) => rocket.reserved !== true);
+  const myRockets = rockets.filter((rocket) => rocket.reserved !== false);
 
   return (
     <div className="list-container">

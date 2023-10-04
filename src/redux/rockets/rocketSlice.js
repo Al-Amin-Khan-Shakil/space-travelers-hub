@@ -1,15 +1,15 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import axios from 'axios';
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import axios from "axios";
 
-const apiURL = 'https://api.spacexdata.com/v4/rockets';
+const apiURL = "https://api.spacexdata.com/v4/rockets";
 
 const initialState = {
   rockets: [],
   loading: false,
-  error: '',
+  error: "",
 };
 
-export const getRocket = createAsyncThunk('rocket/getRocket', async () => {
+export const getRocket = createAsyncThunk("rocket/getRocket", async () => {
   try {
     const response = await axios.get(apiURL);
     return response.data;
@@ -19,14 +19,14 @@ export const getRocket = createAsyncThunk('rocket/getRocket', async () => {
 });
 
 const rocketSlice = createSlice({
-  name: 'rocket',
+  name: "rocket",
   initialState,
   reducers: {
     reserveRocket: (state, action) => ({
       ...state,
       rockets: state.rockets.map((rocket) => {
         if (rocket.id === action.payload) {
-          return { ...rocket, reserved: false };
+          return { ...rocket, reserved: true };
         }
         return rocket;
       }),
@@ -35,7 +35,7 @@ const rocketSlice = createSlice({
       ...state,
       rockets: state.rockets.map((rocket) => {
         if (rocket.id === action.payload) {
-          return { ...rocket, reserved: true };
+          return { ...rocket, reserved: false };
         }
         return rocket;
       }),
@@ -52,7 +52,7 @@ const rocketSlice = createSlice({
           name: rocket.name,
           description: rocket.description,
           flickr_images: rocket.flickr_images[0],
-          reserved: true,
+          reserved: false,
         }));
         state.loading = false;
         // console.log(state.rockets);
