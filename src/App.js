@@ -1,5 +1,4 @@
 import { Route, Routes } from 'react-router-dom';
-import './App.css';
 import Navbar from './components/NavBar/Navbar';
 import Rockets from './components/Rocket/Rockets';
 import MyProfile from './components/ProfilePage/MyProfile';
