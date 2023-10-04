@@ -47,17 +47,15 @@ const rocketSlice = createSlice({
         state.loading = true;
       })
       .addCase(getRocket.fulfilled, (state, action) => {
-        state.rockets = action.payload.map((rocket) => (
-          {
-            id: rocket.id,
-            name: rocket.name,
-            description: rocket.description,
-            flickr_images: rocket.flickr_images[0],
-            reserved: true,
-          }
-        ));
+        state.rockets = action.payload.map((rocket) => ({
+          id: rocket.id,
+          name: rocket.name,
+          description: rocket.description,
+          flickr_images: rocket.flickr_images[0],
+          reserved: true,
+        }));
         state.loading = false;
-        console.log(state.rockets);
+        // console.log(state.rockets);
       })
       .addCase(getRocket.rejected, (state, action) => {
         state.loading = false;
