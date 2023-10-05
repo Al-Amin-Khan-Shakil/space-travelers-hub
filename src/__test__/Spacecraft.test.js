@@ -50,3 +50,23 @@ it('render heading', () => {
   expect(heading.length).toBe(2);
   expect(heading).toBeTruthy();
 });
+
+
+it('test list elements', () => {
+  const mockSpace = () => (
+    <Provider store={store}>
+      <Spacecraft />
+    </Provider>
+  );
+
+  render(mockSpace());
+  const title = screen.getByText('name 1');
+  const title2 = screen.getByText('name 2');
+  const description = screen.getByText('description 1');
+  const description2 = screen.getByText('description 2');
+
+  expect(title).toBeTruthy();
+  expect(title2).toBeTruthy();
+  expect(description).toBeTruthy();
+  expect(description2).toBeTruthy();
+});
