@@ -42,7 +42,7 @@ function Missions() {
                 <td className="mission-name"><h3>{mission.mission_name}</h3></td>
                 <td><p className="description">{mission.description}</p></td>
                 <td>
-                  <div>
+                  <div className="status">
                     {mission.reserved ? <p className="active-member"> Active member</p> : <p className="not-member">NOT a member</p>}
                   </div>
                 </td>

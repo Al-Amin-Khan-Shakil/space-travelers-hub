@@ -5,8 +5,6 @@ import Rockets from '../components/Rocket/Rockets';
 
 const mockStore = configureMockStore([]);
 
-
-
 it('rockets renders correctly', () => {
   const store = mockStore({
     rockets: {
@@ -24,15 +22,15 @@ it('rockets renders correctly', () => {
           description: 'description 2',
           flickr_images: 'flickr_images[1]',
           reserved: false,
-        }
-      ]
-    }
-  })
+        },
+      ],
+    },
+  });
 
   render(
     <Provider store={store}>
       <Rockets />
-    </Provider>
+    </Provider>,
   );
   const ulList = screen.getByRole('list');
   expect(ulList).toBeTruthy();
