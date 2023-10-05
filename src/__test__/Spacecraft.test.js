@@ -51,7 +51,6 @@ it('render heading', () => {
   expect(heading).toBeTruthy();
 });
 
-
 it('test list elements', () => {
   const mockSpace = () => (
     <Provider store={store}>
