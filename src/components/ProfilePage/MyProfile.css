@@ -1,0 +1,34 @@
+.list-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 4vh 5vw;
+  width: 100%;
+}
+
+.rocket-container,
+.mission-container {
+  width: 48.5%;
+}
+
+.rocket-table,
+.mission-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-title th {
+  padding: 10px;
+  text-align: start;
+}
+
+.table-body tr td {
+  border-bottom: 1px solid #ededed;
+  text-align: start;
+  padding: 13px;
+}
+
+.my-rockets,
+.my-missions {
+  font-size: 24px;
+}
