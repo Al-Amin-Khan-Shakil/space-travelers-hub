@@ -1,22 +1,31 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-const API_URL = 'https://api.spacexdata.com/v3/missions';
+const API_URL = "https://api.spacexdata.com/v3/missions";
 
 const initialState = {
   missionData: [],
 };
 
 export const fetchMissionsAsync = createAsyncThunk(
-  'missions/fetchMissions',
+  "missions/fetchMissions",
   async () => {
-    const response = await axios.get(API_URL);
-    return response.data;
-  },
+    try {
+      const response = await fetch(API_URL);
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      throw new Error(`Error fetching missions: ${error.message}`);
+    }
+  }
 );
 
 const missionsSlice = createSlice({
-  name: 'missions',
+  name: "missions",
   initialState,
   reducers: {
     joinMission: (state, action) => ({
