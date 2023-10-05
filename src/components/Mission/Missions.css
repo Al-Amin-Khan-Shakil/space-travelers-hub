@@ -1,12 +1,5 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  text-decoration: none;
-}
-
 .mission-page {
-  margin: 50px;
+  padding: 4vh 5vw;
 }
 
 .missionTable {
@@ -42,23 +35,31 @@ tbody tr td {
   padding: 10px;
 }
 
+.status {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .active-member {
   text-align: center;
+  font-size: 0.6rem;
   color: #fff;
-  background-color: #50adb0;
-  margin: 0 40px 0 40px;
+  background-color: #1bbed7;
   border-radius: 5px;
-  line-height: 30px;
-  text-transform: uppercase;
+  padding: 2px 6px;
+  width: fit-content;
 }
 
 .not-member {
   text-align: center;
+  font-size: 0.6rem;
   color: #fff;
-  background-color: gray;
-  margin: 0 40px 0 40px;
+  background-color: #8c8c8c;
   border-radius: 5px;
-  line-height: 30px;
+  padding: 2px 6px;
   text-transform: uppercase;
 }
 
@@ -66,15 +67,20 @@ tbody tr td {
   text-align: center;
 }
 
-.mission-btn button {
+.join-mission {
   padding: 5px 10px;
-  color: #fff;
-  background-color: #007bff;
-  border: 0.1px solid #007bff;
-  border-radius: 3px;
+  color: #8c8c8c;
+  background-color: transparent;
+  border: 1.5px solid #8c8c8c;
+  border-radius: 5px;
   cursor: pointer;
 }
 
 .leave-mission {
-  background-color: #dc3545;
+  padding: 5px 10px;
+  color: #ff3a3a;
+  background-color: transparent;
+  border: 1.5px solid #ff3a3a;
+  border-radius: 5px;
+  cursor: pointer;
 }
