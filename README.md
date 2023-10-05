@@ -2,7 +2,7 @@
 
 <div align="center">
 
-  <h3><b>Space Travelers Hub</b></h3>
+  <h1><b>Space Travelers Hub</b></h1>
 
 </div>
 
@@ -111,16 +111,15 @@ You can deploy this project using: GitHub but if you want to deploy make sure yo
 
 ### Key Features <a name="key-features"></a>
 
-- [ ] **Add Rocket list**
-- [ ] **Add Missions**
+- [ ] **Reserve your rocket**
+- [ ] **Choose your mission**
+- [ ] **You can see your missions and rockets in "My Profile"**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Add Rocket list**
-- [ ] **Add Missions**
-- [ ] **Designs**
+- [ ] **N/A**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -140,7 +139,7 @@ If you like this project, please, share it with your friends.
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank...
+We would like to thank Microverse, a remote coding bootcamp for web development, for letting us build such a awesome project.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
